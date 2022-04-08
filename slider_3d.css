@@ -1,0 +1,52 @@
+h1 {
+    background-color: gray;
+    /* transform: scale(1); */
+    /* transition: 3s all; */
+    visibility: visible;
+    opacity: 1;
+}
+
+h1::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    display: block;
+    z-index: 10;
+}
+
+.div {
+    height: 200px;
+    width: 300px;
+    overflow: auto;
+}
+
+.inner-test1 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    z-index: -10;
+}
+
+.test {
+    position: absolute;
+}
+
+.test1 {
+    z-index: -10;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.test2 {
+    z-index: -20;
+    margin-top: 100px;
+    margin-left: 70px;
+}
+
+.inner-test2 {
+    width: 100px;
+    height: 150px;
+    background-color: yellow;
+    z-index: -20;
+}
