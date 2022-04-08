@@ -1,0 +1,25 @@
+.text {
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.text__title {
+    border: 2px solid purple;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.text__description {
+    border: 2px solid green;
+    background-color: rgba(50, 250, 50, 0.2);
+    /* display: none; */
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    overflow: hidden;
+}
+
+.text__description.active {
+    /* display: block; */
+    max-height: 500px;
+    overflow: visible;
+    /* transition: max-height 0.2s ease-out; */
+}
