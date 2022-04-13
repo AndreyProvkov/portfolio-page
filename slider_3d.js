@@ -1,21 +1,45 @@
-let delta = 0;
-const h1 = document.querySelector('h1');
 
-document.querySelector('.test').addEventListener('wheel', myscroll);
-document.querySelector('.div').addEventListener('wheel', (e) => e.stopPropagation());
-// window.addEventListener('scroll', myscroll);
 
-function myscroll(e) {
-    delta += e.deltaY;
-    h1.style.transition = '1s all ease-out';
-    h1.style.transform = 'perspective(500px) translateZ(700px)';
-    console.log(e.target);
-    // h1.style.transform = 'translateX(-800px) scale(9) ';
-    // h1.style.transform = '';
-    h1.style.opacity = 0;
-    // h1.style.visibility = 'hidden';
+const perspectiveValue = -1000;
+const zValues = [];
+const frames = document.querySelectorAll('.frame');
+const timePause = 700;
+
+frames.forEach( (item, index) => {
+    let zValue = index * perspectiveValue;
+    zValues.push(zValue);
+    item.style.transform = `translateZ(${zValue}px)`;
+})
+
+scroll3d = pauseDecorator(scroll3d, timePause);
+
+document.addEventListener('wheel', scroll3d);
+
+console.log(zValues);
+
+function scroll3d(e) {
+   
+    if ((zValues[0] <= 0 && e.deltaY < 0) ||
+         (zValues[zValues.length - 1] >= 0 && e.deltaY > 0)) {
+        return;
+    }
+    
+    frames.forEach( (item, index) => {
+        zValues[index] += e.deltaY * 10;
+        item.style.transform = `translateZ(${zValues[index]}px)`;
+    }); 
+
+     console.log(zValues);
     
 }
 
-h1.addEventListener('click', () => console.log('aaa'));
-document.querySelector('.inner-test1').addEventListener('click', () => console.log('bbb'));
+function pauseDecorator(func, ms) {
+    let isCooldown = false;
+    return (e) => {
+        if (isCooldown) return;
+
+        func(e);
+        isCooldown = true;
+        setTimeout( () => isCooldown = false, ms);
+    };
+}
