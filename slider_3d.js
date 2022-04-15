@@ -1,5 +1,3 @@
-
-
 const perspectiveValue = -1000;
 const zValues = [];
 const frames = document.querySelectorAll('.frame');
@@ -23,10 +21,16 @@ function scroll3d(e) {
          (zValues[zValues.length - 1] >= 0 && e.deltaY > 0)) {
         return;
     }
-    
+
     frames.forEach( (item, index) => {
         zValues[index] += e.deltaY * 10;
         item.style.transform = `translateZ(${zValues[index]}px)`;
+        if (zValues[index] > 0) {
+            item.style.opacity = '0';
+        } else {
+            item.style.opacity = '1';
+        }
+        
     }); 
 
      console.log(zValues);

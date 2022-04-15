@@ -20,7 +20,8 @@ body {
     height: 100%;
     padding: 5%;
     box-sizing: border-box;
-    transition: 1s all;
+    opacity: 0;
+    transition: 1s all, 0.7s opacity;
     opacity: 1;
     display: grid;
     align-content: center;
