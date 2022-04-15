@@ -28,7 +28,9 @@ body {
     /* grid-template-columns: 47% 47%; */
     justify-content: center;
 }
-
+.frame_bg {
+    background-color: rgba(0, 0, 0, 0.7);
+}
 .frame:first-child {
     color: red;
 }
