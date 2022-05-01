@@ -13,10 +13,7 @@ scroll3d = pauseDecorator(scroll3d, timePause);
 
 document.addEventListener('wheel', scroll3d);
 
-console.log(zValues);
-
 function scroll3d(e) {
-   
     if ((zValues[0] <= 0 && e.deltaY < 0) ||
          (zValues[zValues.length - 1] >= 0 && e.deltaY > 0)) {
         return;
@@ -32,9 +29,6 @@ function scroll3d(e) {
         }
         
     }); 
-
-     console.log(zValues);
-    
 }
 
 function pauseDecorator(func, ms) {
