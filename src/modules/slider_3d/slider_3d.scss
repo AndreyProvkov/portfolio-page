@@ -12,7 +12,8 @@ p {
     z-index: 100;
     width: 100%;
     height: 100%;
-    position: fixed;box-shadow: inset 0px -3px 50px 0px #01012b;
+    position: fixed;
+    box-shadow: inset 0px -3px 50px 0px #01012b;
 }
 .frames {
     height: 100vh;
@@ -34,14 +35,14 @@ p {
     text-align: center;
     grid-template-columns: 47% 47%;
     column-gap: 6%;
-}
-.frame_bg {
-    background-color: rgba(255, 255, 255, 0.75);
-}
-.frame__content {
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    &__content {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
+    }
+    &.frame_bg {
+        background-color: rgba(255, 255, 255, 0.75);
+    }
 }

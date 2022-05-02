@@ -1,4 +1,4 @@
-class Slider3D {
+export default class Slider3D {
     perspectiveValue = -1000;
     zValues = [];
     frames = document.querySelectorAll('.frame');
@@ -92,6 +92,3 @@ class Slider3D {
         document.addEventListener('keydown', this.scroll)
     }
 }
-
-const slider3d = new Slider3D();
-slider3d.init();
