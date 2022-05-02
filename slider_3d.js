@@ -3,7 +3,8 @@ class Slider3D {
     zValues = [];
     frames = document.querySelectorAll('.frame');
     timePause = 700;
-    stepZValue = 10;
+    stepZValueWheel = 10;
+    stepZValueKey = 1000;
 
     setBeginZValues() {
         this.frames.forEach( (item, index) => {
@@ -22,16 +23,44 @@ class Slider3D {
     }
 
     isEndOfSlidesRange(e) {
-        if ((this.zValues[0] <= 0 && e.deltaY < 0) ||
-            (this.zValues[this.zValues.length - 1] >= 0 && e.deltaY > 0)) {
+        if ((this.zValues[0] <= 0 && 
+            (e.deltaY < 0 || this.isKeyArrowDown(e))) ||
+            (this.zValues[this.zValues.length - 1] >= 0 && 
+            (e.deltaY > 0 || this.isKeyArrowUp(e)))) {
             return true;
         }
         return false;
     }
 
     changeZValue(item, index, e) {
-        this.zValues[index] += e.deltaY * this.stepZValue;
+        if (this.isWheelEvent(e)) this.zValues[index] += e.deltaY * this.stepZValueWheel;
+        
+        if (this.isKeydownEvent(e)) {
+            if (this.isKeyArrowUp(e)) this.zValues[index] += this.stepZValueKey;
+            if (this.isKeyArrowDown(e)) this.zValues[index] += -this.stepZValueKey;
+        }
+
         item.style.transform = `translateZ(${this.zValues[index]}px)`;
+    }
+
+    isWheelEvent(e) {
+        if (e.type === 'wheel') return true;
+        return false;
+    }
+
+    isKeydownEvent(e) {
+        if (e.type === 'keydown') return true;
+        return false;
+    }
+
+    isKeyArrowUp(e) {
+        if (e.code === 'ArrowUp') return true;
+        return false;
+    }
+
+    isKeyArrowDown(e) {
+        if (e.code === 'ArrowDown') return true;
+        return false;
     }
 
     scroll(e) {
@@ -60,6 +89,7 @@ class Slider3D {
         this.scroll = this.pauseScrollDecorator(this.scroll, this.timePause);
 
         document.addEventListener('wheel', this.scroll);
+        document.addEventListener('keydown', this.scroll)
     }
 }
 
