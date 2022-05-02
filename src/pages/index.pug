@@ -1,4 +1,25 @@
 extends ../layout/template.pug
 
+include ../layout/includes/mixins.pug
+
+block variables 
+    - var pageTitle = 'Portfolio'
+
 block content 
-    p Hello, World!
+    .box-shadow
+    .frames
+        +frameSlide
+            +frameContent
+                p JS Practice Slider
+            +frameContent 
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, facere tenetur. Voluptatibus ab expedita eligendi odit, iusto numquam earum facere qui voluptates tenetur perferendis! Consequuntur quidem minus vitae id quaerat?
+        +frameSlide 
+            +frameContent 
+            +frameContent
+                p Second slide 
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus earum, officia numquam, maxime reprehenderit quo harum veniam iusto ab distinctio rerum vel non laborum deleniti? Doloremque non quisquam ipsa molestiae!
+        +frameSlide 
+            +frameContent
+                p Third slide 
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consequatur ratione, quos veritatis dolorem dolorum ea eum, necessitatibus asperiores aliquam aperiam doloribus minus corporis vitae dolor dicta quod deleniti magnam?
+            +frameContent
