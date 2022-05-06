@@ -1,0 +1,7 @@
+@mixin blender {
+    @font-face {
+        font-family: "Blender";
+        src: url('../assets/fonts/blender/BlenderPro-Thin.ttf') format('truetype');
+        font-weight: lighter;
+    }
+}
