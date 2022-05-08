@@ -2,7 +2,6 @@ export default class Slider3D {
     perspectiveValue = -1000;
     zValues = [];
     frames = document.querySelectorAll('.frame');
-    timePause = 700;
     stepZValueWheel = 10;
     stepZValueKey = 1000;
 
@@ -72,23 +71,10 @@ export default class Slider3D {
         }); 
     }
 
-    pauseScrollDecorator(func, ms) {
-        let isCooldown = false;
-        return (e) => {
-            if (isCooldown) return;
-            
-            func.call(this, e);
-            isCooldown = true;
-            setTimeout( () => isCooldown = false, ms);
-        };
-    }
-
     init() {
         this.setBeginZValues();
 
-        this.scroll = this.pauseScrollDecorator(this.scroll, this.timePause);
-
-        document.addEventListener('wheel', this.scroll);
-        document.addEventListener('keydown', this.scroll)
+        document.addEventListener('wheel', this.scroll.bind(this));
+        document.addEventListener('keydown', this.scroll.bind(this));
     }
 }
