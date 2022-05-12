@@ -9,6 +9,9 @@ block content
     .scrollBarTop-progress
     .scrollBarTop-unprogress
     .box-shadow
+    audio(controls loop autoplay).background-music
+        source(src=require("../assets/music/blade_runner_ambient.mp3"), type="audio/mpeg")
+        source(src=require("../assets/music/blade_runner_ambient.ogg"), type="audio/ogg")
     .frames
         +frameSlide
             +frameContent
