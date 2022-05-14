@@ -2,7 +2,6 @@ export default class Slider3D {
     perspectiveValue = -1000;
     zValues = [];
     frames = document.querySelectorAll('.frame');
-    stepZValueWheel = 10;
     stepZValueKey = 1000;
 
     setBeginZValues() {
@@ -32,8 +31,11 @@ export default class Slider3D {
     }
 
     changeZValue(item, index, e) {
-        if (this.isWheelEvent(e)) this.zValues[index] += e.deltaY * this.stepZValueWheel;
-        
+        if (this.isWheelEvent(e)) {
+            if (e.deltaY > 0) this.zValues[index] += this.stepZValueKey;
+            if (e.deltaY < 0) this.zValues[index] += -this.stepZValueKey;
+        } 
+        console.log(e.deltaY);
         if (this.isKeydownEvent(e)) {
             if (this.isKeyArrowUp(e)) this.zValues[index] += this.stepZValueKey;
             if (this.isKeyArrowDown(e)) this.zValues[index] += -this.stepZValueKey;
