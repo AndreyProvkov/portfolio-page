@@ -1,7 +1,16 @@
+// import Slider_3D
 import '../modules/slider_3d/slider_3d.scss';
 import Slider3D from '../modules/slider_3d/slider_3d.js';
+
+// import Scroll_Bar_Top
 import '../modules/scroll_bar_top/scroll_bar_top.scss';
 import ScrollBarTop from '../modules/scroll_bar_top/scroll_bar_top.js';
+
+// import Bacgkround_Music
+import '../modules/background_music/background_music.scss';
+import BackgroundMusic from '../modules/background_music/background_music';
+
+// import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
 
@@ -14,3 +23,6 @@ slider3d.init();
 const scrollBarTop = new ScrollBarTop();
 scrollBarTop.scrollSlide = pauseDecorator(scrollBarTop.scrollSlide, timePause);
 scrollBarTop.init();
+
+const backgroundMusic = new BackgroundMusic();
+backgroundMusic.init();
