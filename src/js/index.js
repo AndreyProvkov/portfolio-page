@@ -10,6 +10,9 @@ import ScrollBarTop from '../modules/scroll_bar_top/scroll_bar_top.js';
 import '../modules/background_music/background_music.scss';
 import BackgroundMusic from '../modules/background_music/background_music';
 
+// import Welcome Screen
+import '../modules/welcome_screen/welcome_screen.scss';
+
 // import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
