@@ -12,6 +12,7 @@ import BackgroundMusic from '../modules/background_music/background_music';
 
 // import Welcome Screen
 import '../modules/welcome_screen/welcome_screen.scss';
+import WelcomeScreen from '../modules/welcome_screen/welcome_screen';
 
 // import Common
 import { pauseDecorator } from './common';
@@ -29,3 +30,6 @@ scrollBarTop.init();
 
 const backgroundMusic = new BackgroundMusic();
 backgroundMusic.init();
+
+const welcomeScreen = new WelcomeScreen();
+welcomeScreen.init();
