@@ -35,7 +35,6 @@ export default class Slider3D {
             if (e.deltaY > 0) this.zValues[index] += this.stepZValueKey;
             if (e.deltaY < 0) this.zValues[index] += -this.stepZValueKey;
         } 
-        console.log(e.deltaY);
         if (this.isKeydownEvent(e)) {
             if (this.isKeyArrowUp(e)) this.zValues[index] += this.stepZValueKey;
             if (this.isKeyArrowDown(e)) this.zValues[index] += -this.stepZValueKey;
