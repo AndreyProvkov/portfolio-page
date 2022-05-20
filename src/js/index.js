@@ -14,6 +14,10 @@ import BackgroundMusic from '../modules/background_music/background_music';
 import '../modules/welcome_screen/welcome_screen.scss';
 import WelcomeScreen from '../modules/welcome_screen/welcome_screen';
 
+// import Accordion
+import '../modules/accordion/accordion.scss';
+import Accordion from '../modules/accordion/accordion.js';
+
 // import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
@@ -33,3 +37,6 @@ backgroundMusic.init();
 
 const welcomeScreen = new WelcomeScreen();
 welcomeScreen.init();
+
+const accordion = new Accordion();
+accordion.init();
