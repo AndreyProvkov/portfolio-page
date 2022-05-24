@@ -18,6 +18,10 @@ import WelcomeScreen from '../modules/welcome_screen/welcome_screen';
 import '../modules/accordion/accordion.scss';
 import Accordion from '../modules/accordion/accordion.js';
 
+// import Tabs
+import '../modules/tabs/tabs.scss';
+import Tabs from '../modules/tabs/tabs.js';
+
 // import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
@@ -40,3 +44,6 @@ welcomeScreen.init();
 
 const accordion = new Accordion();
 accordion.init();
+
+const tabs = new Tabs();
+tabs.init();
