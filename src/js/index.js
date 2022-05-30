@@ -22,6 +22,10 @@ import Accordion from '../modules/accordion/accordion.js';
 import '../modules/tabs/tabs.scss';
 import Tabs from '../modules/tabs/tabs.js';
 
+// import Stopwatch
+import '../modules/stopwatch/stopwatch.scss';
+import Stopwatch from '../modules/stopwatch/stopwatch';
+
 // import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
@@ -47,3 +51,6 @@ accordion.init();
 
 const tabs = new Tabs();
 tabs.init();
+
+const stopwatch = new Stopwatch();
+stopwatch.init();
