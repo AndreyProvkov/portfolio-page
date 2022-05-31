@@ -11,14 +11,6 @@ export default class Stopwatch {
         { ms: this.startTime }
     ];
 
-    stop() {
-        this.pauseContinueButton.addEventListener('click', () => {
-            clearInterval(this.intervalId);
-            this.sec = this.startTime;
-            this.ms = this.startTime;
-        });
-    }
-
     increaseTime(timeArr, index, timeKey) {
         timeArr[index][timeKey]++;
     }
@@ -34,6 +26,11 @@ export default class Stopwatch {
         return false;
     }
 
+    isSingleDigit(number) {
+        if (number >= 0 && number < 10) return true;
+        return false;
+    }
+
     clearTime(arr, index, time) {
         arr[index][time] = this.startTime;
     }
@@ -46,7 +43,25 @@ export default class Stopwatch {
         return parseInt(Object.values(arr[index]));
     }
 
+    showTime(arr) {
+        let str = ``;
+        for (let i = 0; i < arr.length; i++) {
+            if (!this.isSingleDigit(this.getValueItem(arr, i))) {
+                str += `${this.getValueItem(arr, i)}`;
+            } else {
+                str += `0${this.getValueItem(arr, i)}`;
+            }
+            
+            if (i !== arr.length - 1) {
+                str += ` : `;
+            }
+        }
+        console.log(str);
+    }
+
     nextTime(timeArr) {        
+        this.showTime(timeArr);
+
         this.increaseTime(timeArr, (timeArr.length - 1), this.getKeyItem(timeArr, (timeArr.length - 1)));
 
         for (let i = timeArr.length - 1; i > 0; i--) {
@@ -61,11 +76,18 @@ export default class Stopwatch {
         this.startStopButton.addEventListener('click', () => {
             if (!this.isActive()) {
                 this.intervalId = setInterval(() => {
-                    console.log(`${Object.values(this.times[0])} : ${Object.values(this.times[1])} : ${Object.values(this.times[2])}`);
                     this.nextTime(this.times);
                 }, 10);
             }
         })
+    }
+
+    stop() {
+        this.pauseContinueButton.addEventListener('click', () => {
+            clearInterval(this.intervalId);
+            this.sec = this.startTime;
+            this.ms = this.startTime;
+        });
     }
 
     init() {
