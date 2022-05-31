@@ -31,8 +31,10 @@ export default class Stopwatch {
         return false;
     }
 
-    clearTime(arr, index, time) {
-        arr[index][time] = this.startTime;
+    clearTime(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i][this.getKeyItem(arr, i)] = this.startTime;
+        }
     }
 
     getKeyItem(arr, index) {
@@ -73,20 +75,29 @@ export default class Stopwatch {
     }
 
     start() {
-        this.startStopButton.addEventListener('click', () => {
+        this.startStopButton.addEventListener('click', (e) => {
             if (!this.isActive()) {
                 this.intervalId = setInterval(() => {
                     this.nextTime(this.times);
+                    this.active = true;
                 }, 10);
+                this.changeTextButton(e.target, 'Stop');
             }
         })
     }
 
+    changeTextButton(el, txt) {
+        el.textContent = txt;
+    }
+
     stop() {
-        this.pauseContinueButton.addEventListener('click', () => {
-            clearInterval(this.intervalId);
-            this.sec = this.startTime;
-            this.ms = this.startTime;
+        this.startStopButton.addEventListener('click', (e) => {
+            if (this.isActive()) {
+                clearInterval(this.intervalId);
+                this.clearTime(this.times);
+                this.changeTextButton(e.target, 'Start');
+                this.active = false;
+            }
         });
     }
 
