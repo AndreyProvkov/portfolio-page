@@ -5,6 +5,7 @@ export default class Stopwatch {
     intervalId = 0;
     active = false;
     pause = false;
+    stop = true;
     times = [
         { min: this.startTime }, 
         { sec: this.startTime }, 
@@ -20,6 +21,11 @@ export default class Stopwatch {
         return false;
     }
 
+    isPause() {
+        if (this.pause === true) return true;
+        return false;
+    }
+
     isEndRangeTime(time, timeValue) {
         if (time === 'ms' && timeValue === 100) return true;
         if ((time === 'sec' || time === 'min') && timeValue === 60) return true;
@@ -31,8 +37,12 @@ export default class Stopwatch {
         return false;
     }
 
-    clearTime(arr) {
-        for (let i = 0; i < arr.length; i++) {
+    clearCurrentTime(arr, index, time) {
+        arr[index][time] = this.startTime;
+    }
+
+    clearAllTime(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
             arr[i][this.getKeyItem(arr, i)] = this.startTime;
         }
     }
@@ -68,41 +78,75 @@ export default class Stopwatch {
 
         for (let i = timeArr.length - 1; i > 0; i--) {
             if (this.isEndRangeTime(this.getKeyItem(timeArr, i), this.getValueItem(timeArr, i))) {
-                this.clearTime(timeArr, i, this.getKeyItem(timeArr, i));
-                this.increaseTime(timeArr, i - 1, this.getKeyItem(timeArr, i - 1));
+                this.clearCurrentTime(timeArr, i, this.getKeyItem(timeArr, i));
+                this.increaseTime(timeArr, (i - 1), this.getKeyItem(timeArr, (i - 1)));
             }
         }
     }
 
-    start() {
-        this.startStopButton.addEventListener('click', (e) => {
-            if (!this.isActive()) {
-                this.intervalId = setInterval(() => {
-                    this.nextTime(this.times);
-                    this.active = true;
-                }, 10);
-                this.changeTextButton(e.target, 'Stop');
-            }
-        })
+    startStopwatch(e) {
+        this.intervalId = setInterval(() => {
+            this.nextTime(this.times);
+        }, 10);
+        this.activateButton(this.pauseContinueButton);
+
+        this.changeTextButton(e.target, 'Stop');
+        if (this.isPause()) {
+            this.changeTextButton(e.target, 'Pause');
+        }
+
+        this.active = true;
+        this.pause = false;
+        this.stop = false;
     }
 
     changeTextButton(el, txt) {
         el.textContent = txt;
     }
 
-    stop() {
-        this.startStopButton.addEventListener('click', (e) => {
-            if (this.isActive()) {
-                clearInterval(this.intervalId);
-                this.clearTime(this.times);
-                this.changeTextButton(e.target, 'Start');
-                this.active = false;
-            }
-        });
+    disableButton(el) {
+        el.disabled = true;
+    }
+
+    activateButton(el) {
+        el.disabled = false;
+    }
+
+    stopStopwatch(e) {
+        clearInterval(this.intervalId);
+        this.clearAllTime(this.times);
+        this.changeTextButton(e.target, 'Start');
+        this.changeTextButton(this.pauseContinueButton, 'Pause');
+        this.disableButton(this.pauseContinueButton);
+        this.active = false;
+        this.stop = true;
+        this.pause = false;
+    }
+
+    pauseStopwatch(e) {
+        clearInterval(this.intervalId);
+        this.changeTextButton(e.target, 'Continue');
+        this.pause = true;            
     }
 
     init() {
-        this.start();
-        this.stop();
+        this.disableButton(this.pauseContinueButton);
+
+        this.startStopButton.addEventListener('click', (e) => {
+            if (this.isActive()) {
+                this.stopStopwatch(e);  
+            } else {
+                this.startStopwatch(e);
+            }
+        });
+        
+        this.pauseContinueButton.addEventListener('click', (e) => {
+            if (!this.isPause()) {
+                this.pauseStopwatch(e);
+            } else {
+                this.startStopwatch(e);
+            }
+        });
+        
     }
 }
