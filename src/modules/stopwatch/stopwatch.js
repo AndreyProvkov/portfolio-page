@@ -1,12 +1,14 @@
 export default class Stopwatch {
     startStopButton = document.querySelector('.stopwatch__start-stop');
     pauseContinueButton = document.querySelector('.stopwatch__pause-continue');
+    timesBlock = document.querySelectorAll('.stopwatch__times span');
     startTime = 0;
     intervalId = 0;
     active = false;
     pause = false;
     stop = true;
     times = [
+        { hr: this.startTime },
         { min: this.startTime }, 
         { sec: this.startTime }, 
         { ms: this.startTime }
@@ -59,16 +61,13 @@ export default class Stopwatch {
         let str = ``;
         for (let i = 0; i < arr.length; i++) {
             if (!this.isSingleDigit(this.getValueItem(arr, i))) {
-                str += `${this.getValueItem(arr, i)}`;
+                str = `${this.getValueItem(arr, i)}`;
             } else {
-                str += `0${this.getValueItem(arr, i)}`;
+                str = `0${this.getValueItem(arr, i)}`;
             }
-            
-            if (i !== arr.length - 1) {
-                str += ` : `;
-            }
+
+            this.timesBlock[i].innerHTML = str;
         }
-        console.log(str);
     }
 
     nextTime(timeArr) {        
@@ -147,6 +146,5 @@ export default class Stopwatch {
                 this.startStopwatch(e);
             }
         });
-        
     }
 }

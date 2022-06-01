@@ -26,8 +26,21 @@ block content
             +frameContent
             +frameContent
                 .stopwatch
-                    button.stopwatch__button.stopwatch__start-stop Start
-                    button.stopwatch__button.stopwatch__pause-continue Pause
+                    .stopwatch__times
+                        span.hours 00
+                        |
+                        | :
+                        |
+                        span.minutes 00
+                        |
+                        | :
+                        |
+                        span.seconds 00
+                        | .
+                        span.milliseconds 00
+                    .stopwatch__buttons
+                        button.stopwatch__button.stopwatch__start-stop Start
+                        button.stopwatch__button.stopwatch__pause-continue Pause
         +frameSlide
             +frameContent
                 .tabs 
