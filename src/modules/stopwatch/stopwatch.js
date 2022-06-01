@@ -44,7 +44,7 @@ export default class Stopwatch {
     }
 
     clearAllTime(arr) {
-        for (let i = 0; i < arr.length - 1; i++) {
+        for (let i = 0; i < arr.length; i++) {
             arr[i][this.getKeyItem(arr, i)] = this.startTime;
         }
     }
@@ -114,6 +114,7 @@ export default class Stopwatch {
     stopStopwatch(e) {
         clearInterval(this.intervalId);
         this.clearAllTime(this.times);
+        this.showTime(this.times);
         this.changeTextButton(e.target, 'Start');
         this.changeTextButton(this.pauseContinueButton, 'Pause');
         this.disableButton(this.pauseContinueButton);
