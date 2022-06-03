@@ -23,6 +23,25 @@ block content
         .background-music__item 
     .frames
         +frameSlide
+                +frameContent
+                    .timer
+                        .timer__times
+                            span.timer__hours 00
+                            |
+                            | :
+                            |
+                            span.timer__minutes 00
+                            |
+                            | :
+                            |
+                            span.timer__seconds 00
+                            | .
+                            span.timer__milliseconds 00
+                        .timer__buttons
+                            button.timer__button.timer__start-stop Start
+                            button.timer__button.timer__pause-continue Pause
+                +frameContent
+        +frameSlide
             +frameContent
             +frameContent
                 .stopwatch

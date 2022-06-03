@@ -26,6 +26,10 @@ import Tabs from '../modules/tabs/tabs.js';
 import '../modules/stopwatch/stopwatch.scss';
 import Stopwatch from '../modules/stopwatch/stopwatch';
 
+// import Timer
+import Timer from '../modules/timer/timer';
+import '../modules/timer/timer.scss';
+
 // import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
@@ -54,3 +58,6 @@ tabs.init();
 
 const stopwatch = new Stopwatch();
 stopwatch.init();
+
+const timer = new Timer();
+timer.init();
