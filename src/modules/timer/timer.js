@@ -10,15 +10,10 @@ export default class Timer {
     times = [
         { hr: 0 },
         { min: 0 }, 
-        { sec: 0 }, 
-        { ms: 4 }
-    ];
-    selectedTimes = [
-        { hr: 0 },
-        { min: 0 },
-        { sec: 3 },
+        { sec: 15 }, 
         { ms: 0 }
     ];
+    selectedTimes = [];
 
     decreaseTime(timeArr, index, timeKey) {
         timeArr[index][timeKey]--;
@@ -63,6 +58,16 @@ export default class Timer {
         arr.forEach((item, index) => {
             item[this.getKeyItem(arr, index)] = 0;
         });
+    }
+
+    setArrayItem(arrGiving, arrReceiving) {
+        for (let i = 0; i < arrGiving.length; i++) {
+            arrReceiving[i] = Object.assign({}, arrGiving[i]);
+        }
+    }
+
+    getSelectedTime() {
+        return this.selectedTimes;
     }
 
     getKeyItem(arr, index) {
@@ -136,8 +141,7 @@ export default class Timer {
 
     stopTimer(e) {
         clearInterval(this.intervalId);
-        
-        this.setZeroAllTime(this.times);
+
         this.showTime(this.times);
 
         this.changeTextButton(e.target, 'Start');
@@ -155,11 +159,18 @@ export default class Timer {
         this.pause = true;            
     }
 
-    init() {
+    setStartState() {
         this.disableButton(this.pauseContinueButton);
-        
+        this.setArrayItem(this.times, this.selectedTimes);
+        this.showTime(this.times);
+    }
+
+    init() {
+        this.setStartState();
+
         this.startStopButton.addEventListener('click', (e) => {
             if (this.isActive()) {
+                this.setArrayItem(this.getSelectedTime(), this.times);
                 this.stopTimer(e);  
             } else {
                 this.startTimer(e);
