@@ -26,15 +26,11 @@ block content
                 +frameContent
                     .timer
                         .timer__times
-                            span.timer__hours 00
-                            |
+                            input(type='text'  maxlength='2' value='00' size='2').timer__hours.timer__input
                             | :
-                            |
-                            span.timer__minutes 00
-                            |
+                            input(type='text'  maxlength='2' value='00' size='2').timer__minutes.timer__input
                             | :
-                            |
-                            span.timer__seconds 00
+                            input(type='text'  maxlength='2' value='15' size='2').timer__seconds.timer__input
                             | .
                             span.timer__milliseconds 00
                         .timer__buttons
