@@ -5,6 +5,19 @@
     &__times {
         margin-bottom: 5%;
     }
+    &__input {
+        outline: none;
+        border: none;
+        font-family: 'Blender', 'Segoe UI', Tahoma, Verdana, sans-serif;
+        font-size: calc((1vh + 1vw) * 1.4);
+        font-weight: lighter;
+        text-shadow: 0px 0px 3px #05d9e8,
+            2px 2px 2px #005678;
+        color: #d1f7ff;
+        cursor: pointer;
+        background: black;
+        width: 18%;
+    }
     &__milliseconds {
         font-size: calc((1vh + 1vw) * 0.8);
     }
