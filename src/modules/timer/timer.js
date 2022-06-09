@@ -90,7 +90,7 @@ export default class Timer {
             if (i !== arr.length - 1) {
                 this.timesBlock[i].value = str;
             } else {
-                this.timesBlock[i].innerHTML = str;
+                this.timesBlock[i].innerText = str;
             }
         }
     }
