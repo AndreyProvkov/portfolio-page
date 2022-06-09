@@ -1,7 +1,7 @@
 export default class Timer {
     startStopButton = document.querySelector('.timer__start-stop');
     pauseContinueButton = document.querySelector('.timer__pause-continue');
-    timesBlock = document.querySelectorAll('.timer__times span');
+    timesBlock = document.querySelector('.timer__times').children;
     intervalId = 0;
     indexNotZeroValue = -1;
     active = false;
@@ -87,11 +87,15 @@ export default class Timer {
                 str = `0${this.getValueItem(arr, i)}`;
             }
 
-            this.timesBlock[i].innerHTML = str;
+            if (i !== arr.length - 1) {
+                this.timesBlock[i].value = str;
+            } else {
+                this.timesBlock[i].innerHTML = str;
+            }
         }
     }
 
-    nextTime(e, timeArr) {        
+    nextTime(timeArr) {        
         this.showTime(timeArr);
         
         this.decreaseTime(timeArr, (timeArr.length - 1), this.getKeyItem(timeArr, (timeArr.length - 1)));
@@ -109,7 +113,7 @@ export default class Timer {
             if (this.isZeroAllTime(this.times)) {
                 this.stopTimer(e);
             } else {
-                this.nextTime(e, this.times);
+                this.nextTime(this.times);
             }
         }, 10);
 
@@ -160,6 +164,15 @@ export default class Timer {
     }
 
     setStartState() {
+        for (let i = 0; i < this.timesBlock.length; i++) {
+            if (i < this.timesBlock.length - 2) {
+                this.timesBlock[i].value = '00';
+            }
+            if (i === this.timesBlock.length - 2) {
+                this.timesBlock[i].value = '15';
+            }
+        }
+
         this.disableButton(this.pauseContinueButton);
         this.setArrayItem(this.times, this.selectedTimes);
         this.showTime(this.times);
