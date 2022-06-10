@@ -47,6 +47,14 @@ export default class Timer {
         }
     }
 
+    isOutOfRangeTime(value, classTime) {
+        if ((value > 59 && classTime !== 'timer__hours') || 
+            (value > 23 && classTime === 'timer__hours')) {
+                return true;
+            }
+        return false;
+    }
+
     isZeroAllTime(arr) {
         for (let i = 0; i < arr.length; i++) {
             if (this.getValueItem(arr, i) !== 0) return false;
@@ -65,10 +73,28 @@ export default class Timer {
         });
     }
 
+    getClassTime(classNames) {
+        return classNames.replace(/\s*timer__input\s*/g, '');
+    }
+
+    setInputValue(e) {
+        if (this.isOutOfRangeTime(e.target.value, this.getClassTime(e.target.className)) &&
+            this.getClassTime(e.target.className) !== 'timer__hours') {
+            e.target.value = 59;
+        } else if (this.isOutOfRangeTime(e.target.value, this.getClassTime(e.target.className)) &&
+                   this.getClassTime(e.target.className) === 'timer__hours') {
+            e.target.value = 23;
+        }
+    }
+
     setArrayItem(arrGiving, arrReceiving) {
         for (let i = 0; i < arrGiving.length; i++) {
             arrReceiving[i] = Object.assign({}, arrGiving[i]);
         }
+    }
+
+    setSelectedTime(value, index) {
+        this.selectedTimes[index][this.getKeyItem(this.selectedTimes, index)] = value;
     }
 
     getSelectedTime() {
@@ -195,6 +221,21 @@ export default class Timer {
             'input',
             (e) => {
                 e.target.value = e.target.value.replace(/[^\d]/g, '');
+            }
+        );
+
+        this.setEventListenerForTimes(this.timesBlock,
+            'change',
+            (e) => {
+                this.setInputValue(e);
+
+                for (let i = 0; i < this.timesBlock.length - 1; i++) {
+                    this.setSelectedTime(Number(this.timesBlock[i].value), i); 
+                }
+
+                this.setArrayItem(this.getSelectedTime(), this.times);
+                this.showTime(this.times);
+                console.log(e.target.className);
             }
         );
 
