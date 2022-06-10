@@ -11,7 +11,7 @@ export default class ScrollBarTop {
     setPercentProgress(e) {
         if (e.deltaY > 0 || this.isKeyArrowUp(e)) {
             this.widthPercent += this.onePartOfWidthPercent;
-        } else {
+        } else if (e.deltaY < 0 || this.isKeyArrowDown(e)) {
             this.widthPercent += -this.onePartOfWidthPercent;
         }
         this.unprogressScroll.style.left = `${this.widthPercent}%`;
@@ -20,7 +20,7 @@ export default class ScrollBarTop {
     setScrollCounter(e) {
         if (e.deltaY > 0 || this.isKeyArrowUp(e)) {
             this.scrollCounter++;
-        } else {
+        } else if (e.deltaY < 0 || this.isKeyArrowDown(e)) {
             this.scrollCounter--;
         }
     }
