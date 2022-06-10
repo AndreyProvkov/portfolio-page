@@ -149,6 +149,8 @@ export default class Timer {
         this.intervalId = setInterval(() => {
             if (this.isZeroAllTime(this.times)) {
                 this.stopTimer(e);
+                this.setArrayItem(this.getSelectedTime(), this.times);
+                this.showTime(this.times);
             } else {
                 this.nextTime(this.times);
             }
@@ -235,7 +237,6 @@ export default class Timer {
 
                 this.setArrayItem(this.getSelectedTime(), this.times);
                 this.showTime(this.times);
-                console.log(e.target.className);
             }
         );
 
