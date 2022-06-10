@@ -54,6 +54,11 @@ export default class Timer {
         return true;
     }
 
+    isExitKey(e) {
+        if (e.code === 'Escape' || e.code === 'Enter') return true;
+        return false;
+    }
+
     setZeroAllTime(arr) {
         arr.forEach((item, index) => {
             item[this.getKeyItem(arr, index)] = 0;
@@ -76,6 +81,12 @@ export default class Timer {
 
     getValueItem(arr, index) {
         return parseInt(Object.values(arr[index]));
+    }
+
+    setEventListenerForTimes(arr, eventType, func) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            arr[i].addEventListener(eventType, func)
+        };
     }
 
     showTime(arr) {
@@ -172,6 +183,20 @@ export default class Timer {
                 this.timesBlock[i].value = '15';
             }
         }
+
+        this.setEventListenerForTimes(this.timesBlock,
+            'keydown',
+            (e) => {
+                if (this.isExitKey(e)) e.target.blur();
+            }
+        );
+
+        this.setEventListenerForTimes(this.timesBlock,
+            'input',
+            (e) => {
+                e.target.value = e.target.value.replace(/[^\d]/g, '');
+            }
+        );
 
         this.disableButton(this.pauseContinueButton);
         this.setArrayItem(this.times, this.selectedTimes);
