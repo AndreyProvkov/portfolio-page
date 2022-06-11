@@ -1,7 +1,9 @@
 .stopwatch {
     padding: 1rem 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1rem 0.1rem rgb(70, 31, 82);
+    // box-shadow: 0 0 1rem 0.1rem rgb(70, 31, 82);
+    max-width: 20rem;
+    margin: auto;
     &__times {
         margin-bottom: 5%;
     }
@@ -16,7 +18,8 @@
     }
     &__button {
         font-size: calc((1vh + 1vw) * 0.8);
-        width: 100%;
+        width: 60%;
+        padding: 0.2rem;
         margin-bottom: 4%;
         outline: none;
         border: none;
