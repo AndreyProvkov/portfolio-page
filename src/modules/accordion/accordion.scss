@@ -1,23 +1,30 @@
-.accordion__title {
-    background: linear-gradient(90deg, rgba(83, 32, 97, 1) 0%, rgba(205, 32, 87, 1) 100%);
-    width: 100%;
-    border-radius: 0.3rem;
-    margin-top: 4%;
-    padding: 2% 0;
-    box-shadow: 0 0 1rem 0.4rem rgb(41, 19, 48);
-    cursor: pointer;
-    opacity: 1;
-    transition: 0.5s all;
-    &.active {
-        border-radius: 0;
-        border-top-left-radius: 0.3rem;
-        border-top-right-radius: 0.3rem;
-        opacity: 0.8;
+.accordion {
+    overflow-y: auto;
+    max-height: 25rem;
+    outline: none;
+    &::-webkit-scrollbar {
+        width: 0;
+      }
+    &__title {
+        background: linear-gradient(90deg, rgba(83, 32, 97, 1) 0%, rgba(205, 32, 87, 1) 100%);
+        width: 100%;
+        border-radius: 0.3rem;
+        margin-top: 4%;
+        padding: 2% 0;
+        box-shadow: 0 0 1rem 0.4rem rgb(41, 19, 48);
+        cursor: pointer;
+        opacity: 1;
+        transition: 0.5s all;
+        &.active {
+            border-radius: 0;
+            border-top-left-radius: 0.3rem;
+            border-top-right-radius: 0.3rem;
+            opacity: 0.8;
+        } 
     }
-}
-
-.accordion__description {
-    max-height: 0;
-    transition: all 1s;
-    overflow: hidden;
+    &__description {
+        max-height: 0;
+        transition: all 1s;
+        overflow: hidden;
+    }
 }
