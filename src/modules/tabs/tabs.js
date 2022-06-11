@@ -106,7 +106,7 @@ export default class Tabs {
         }
     }
 
-    setBeginStyleTabs() {
+    setBeginStyleTabs(tab) {
         this.tabsItems.forEach( (item) => {
             item.style.border = '1px solid rgba(83, 32, 97, 0.5)';
             item.style.borderBottomColor = 'rgba(83, 32, 97, 1)';
@@ -115,14 +115,14 @@ export default class Tabs {
             item.removeAttribute('active');
         });
 
-        this.setBeginHeightTab(this.firstTab);
-        this.setBeginWidthTab(this.firstTab);
+        this.setBeginHeightTab(tab);
+        this.setBeginWidthTab(tab);
     }
 
     changeTab() {
         this.tabsItems.forEach( (item, index) => {
             item.addEventListener('click', () => {
-                this.setBeginStyleTabs();
+                this.setBeginStyleTabs(item);
                 this.setSelectedStyleTab(item, index);
                 this.hideContent(index);
                 this.showContent(index);
