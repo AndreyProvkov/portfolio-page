@@ -22,79 +22,67 @@ block content
         .background-music__item 
         .background-music__item 
     .frames
-        +frameSlide
-                +frameContent
-                    .timer
-                        .timer__times
-                            input(type='text'  maxlength='2' size='2').timer__hours.timer__input
-                            | :
-                            input(type='text'  maxlength='2' size='2').timer__minutes.timer__input
-                            | :
-                            input(type='text'  maxlength='2' size='2').timer__seconds.timer__input
-                            | .
-                            span.timer__milliseconds 00
-                        .timer__buttons
-                            button.timer__button.timer__start-stop Start
-                            button.timer__button.timer__pause-continue Pause
-                +frameContent
-        +frameSlide
-            +frameContent
-            +frameContent
-                .stopwatch
-                    .stopwatch__times
-                        span.stopwatch__hours 00
-                        |
-                        | :
-                        |
-                        span.stopwatch__minutes 00
-                        |
-                        | :
-                        |
-                        span.stopwatch__seconds 00
-                        | .
-                        span.stopwatch__milliseconds 00
-                    .stopwatch__buttons
-                        button.stopwatch__button.stopwatch__start-stop Start
-                        button.stopwatch__button.stopwatch__pause-continue Pause
+        //- +frameSlide
+        //-         +frameContent
+                    
+        //-         +frameContent
         +frameSlide
             +frameContent
                 .tabs 
                     .tabs__items
-                        .tabs__item Tab 1
-                        .tabs__item Tab 2
-                        .tabs__item Tab 3
+                        .tabs__item Accordion
+                        .tabs__item Stopwatch
+                        .tabs__item Timer
                     .tabs__contents
                         .tabs__content
-                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cumque, deserunt inventore sequi laborum facilis iste quia deleniti officiis sit dolores, ullam nobis repudiandae molestiae blanditiis repellendus ducimus non omnis?
+                            .accordion(tabindex='-1')
+                                .accordion__title FIRST TITLE
+                                p.accordion__description.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ut iste placeat, atque necessitatibus hic doloremque dolorem rerum rem, nemo ea consequuntur itaque consequatur numquam, blanditiis modi inventore expedita minima.
+                                .accordion__title SECOND TITLE
+                                p.accordion__description.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Qui ut iste placeat, atque necessitatibus hic doloremque dolorem rerum rem, nemo ea consequuntur itaque consequatur numquam, blanditiis modi inventore expedita minima. 
+                                .accordion__title THIRD TITLE
+                                p.accordion__description.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Qui ut iste placeat, atque necessitatibus hic doloremque dolorem rerum rem, nemo ea consequuntur itaque consequatur numquam, blanditiis modi inventore expedita minima.
                         .tabs__content
-                            p TAB 2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquam voluptas inventore suscipit iure ab quibusdam minus tenetur eveniet, aperiam ex illum error eius omnis. Provident rem ad cumque nesciunt!
+                            .stopwatch
+                                .stopwatch__times
+                                    span.stopwatch__hours 00
+                                    |
+                                    | :
+                                    |
+                                    span.stopwatch__minutes 00
+                                    |
+                                    | :
+                                    |
+                                    span.stopwatch__seconds 00
+                                    | .
+                                    span.stopwatch__milliseconds 00
+                                .stopwatch__buttons
+                                    button.stopwatch__button.stopwatch__start-stop Start
+                                    button.stopwatch__button.stopwatch__pause-continue Pause
                         .tabs__content
-                            p TAB 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt corrupti ducimus modi. Commodi eum quasi dolorum praesentium debitis! Impedit necessitatibus repudiandae sunt ea libero doloribus quaerat, sapiente voluptates dignissimos enim!
+                            .timer
+                                .timer__times
+                                    input(type='text'  maxlength='2' size='1').timer__hours.timer__input
+                                    | :
+                                    input(type='text'  maxlength='2' size='1').timer__minutes.timer__input
+                                    | :
+                                    input(type='text'  maxlength='2' size='1').timer__seconds.timer__input
+                                    | .
+                                    span.timer__milliseconds 00
+                                .timer__buttons
+                                    button.timer__button.timer__start-stop Start
+                                    button.timer__button.timer__pause-continue Pause
             +frameContent 
-        +frameSlide
-            +frameContent
-                p JS Practice Slider
-            +frameContent 
-                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, facere tenetur. Voluptatibus ab expedita eligendi odit, iusto numquam earum facere qui voluptates tenetur perferendis! Consequuntur quidem minus vitae id quaerat?
         +frameSlide 
             +frameContent 
             +frameContent
-                .accordion__title FIRST TITLE
-                p.accordion__description.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ut iste placeat, atque necessitatibus hic doloremque dolorem rerum rem, nemo ea consequuntur itaque consequatur numquam, blanditiis modi inventore expedita minima.
-                .accordion__title SECOND TITLE
-                p.accordion__description.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                .accordion__title THIRD TITLE
-                p.accordion__description.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                h2 Coming soon...
         +frameSlide 
             +frameContent 
-            +frameContent
-                p Second slide 
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus earum, officia numquam, maxime reprehenderit quo harum veniam iusto ab distinctio rerum vel non laborum deleniti? Doloremque non quisquam ipsa molestiae!
-        +frameSlide 
-            +frameContent
-                p Third slide 
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consequatur ratione, quos veritatis dolorem dolorum ea eum, necessitatibus asperiores aliquam aperiam doloribus minus corporis vitae dolor dicta quod deleniti magnam?
+                h2 Coming soon...
             +frameContent
