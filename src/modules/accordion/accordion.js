@@ -1,5 +1,6 @@
 export default class Accordion {
     titles = document.querySelectorAll('.accordion__title');
+    accordionBlock = document.querySelector('.accordion');
 
     setEventListenerClick() {
         this.titles.forEach( item => {
@@ -31,6 +32,22 @@ export default class Accordion {
     }
 
     init() {
+        this.accordionBlock.addEventListener('wheel', e => {
+            e.stopPropagation();
+        });
+
+        this.accordionBlock.addEventListener('keydown', e => {
+            e.stopPropagation();
+        });
+
+        this.accordionBlock.addEventListener('mouseenter', e => {
+            e.target.focus();
+        });
+
+        this.accordionBlock.addEventListener('mouseleave', (e) => {
+            e.target.blur();
+        });
+
         this.setEventListenerClick();
     }
 }
