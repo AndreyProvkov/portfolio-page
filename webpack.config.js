@@ -75,6 +75,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './pages/index.pug',
             filename: 'index.html',
+            favicon: './assets/img/vaporwave.ico',
             minify: {
                 collapseWhitespace: isProd,
             },
