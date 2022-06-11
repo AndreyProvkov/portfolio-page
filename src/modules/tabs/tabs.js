@@ -130,7 +130,15 @@ export default class Tabs {
         });
     }
 
+    selectTabFirst(tab, index) {
+        this.setBeginStyleTabs(tab);
+        this.setSelectedStyleTab(tab, index);
+        this.showContent(index);
+    }
+
     init() {
+        this.selectTabFirst(this.firstTab, 0);
+
         this.changeTab();
     }
 }
