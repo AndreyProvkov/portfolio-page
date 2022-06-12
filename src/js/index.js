@@ -30,6 +30,10 @@ import Stopwatch from '../modules/stopwatch/stopwatch';
 import Timer from '../modules/timer/timer';
 import '../modules/timer/timer.scss';
 
+// import Contact Me
+import '../modules/contact_me/contact_me.scss';
+import ContactMe from '../modules/contact_me/contact_me';
+
 // import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
@@ -61,3 +65,6 @@ stopwatch.init();
 
 const timer = new Timer();
 timer.init();
+
+const contactMe = new ContactMe();
+contactMe.init();
