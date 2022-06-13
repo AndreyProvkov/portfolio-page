@@ -18,15 +18,22 @@ export default class ContactMe {
     setStartSizesContactBlock() {
         this.contactMe.style.setProperty('--heightBorder', this.calculateHeightPseudoElement());
         this.contactMe.style.setProperty('--width', this.calculateWidthPseudoElement());
-        this.contactMe.style.setProperty('--bottomPos', this.calculateBottomPosition());
+        this.contactMe.style.bottom = this.calculateBottomPosition();
     }
 
     toggleHeightContactMeBlock() {
         this.contactMe.classList.toggle('active');
+        
+        if (this.contactMe.classList.contains('active')) {
+            this.contactMe.style.bottom = 0;
+        } else {
+            this.contactMe.style.bottom = this.calculateBottomPosition();
+        }
     }
 
     hideContactMeBlock() {
         this.contactMe.classList.remove('active');
+        this.contactMe.style.bottom = this.calculateBottomPosition();
     }
 
     init() {
@@ -49,7 +56,7 @@ export default class ContactMe {
         window.addEventListener('resize', () => {
             this.contactMe.style.setProperty('--heightBorder', this.calculateHeightPseudoElement());
             this.contactMe.style.setProperty('--width', this.calculateWidthPseudoElement());
-            this.contactMe.style.setProperty('--bottomPos', this.calculateBottomPosition());
+            this.contactMe.style.bottom = this.calculateBottomPosition();
         });
     }
 }
