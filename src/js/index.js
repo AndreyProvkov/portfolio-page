@@ -34,6 +34,10 @@ import '../modules/timer/timer.scss';
 import '../modules/contact_me/contact_me.scss';
 import ContactMe from '../modules/contact_me/contact_me';
 
+// import Calculator
+import '../modules/calculator/calculator.scss';
+import Calculator from '../modules/calculator/calculator';
+
 // import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
@@ -68,3 +72,6 @@ timer.init();
 
 const contactMe = new ContactMe();
 contactMe.init();
+
+const calculator = new Calculator();
+calculator.init();
