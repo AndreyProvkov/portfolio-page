@@ -22,10 +22,10 @@ block content
         .background-music__item 
         .background-music__item 
     .frames
-        //- +frameSlide
-        //-         +frameContent
-                    
-        //-         +frameContent
+        +frameSlide
+                +frameContent
+                    p Description
+                +frameContent
         +frameSlide
             +frameContent
                 .tabs 
@@ -81,7 +81,31 @@ block content
         +frameSlide 
             +frameContent 
             +frameContent
-                h2 Coming soon...
+                .calculator
+                        .calculator__display
+                            input.calculator__history(type='text' value='' disabled='')
+                            output.calculator__result(name='result') 0
+                        .calculator__keypad
+                            button.calculator__button(type='button' data-all-clear) C
+                            button.calculator__button(type='button' data-backspace) &larrb;
+                            button.calculator__button(type='button' data-percent) %
+                            button.calculator__operator(type='button' data-operator='/') &div;
+                            button.calculator__button(type='button' data-number='7') 7
+                            button.calculator__button(type='button' data-number='8') 8
+                            button.calculator__button(type='button' data-number='9') 9
+                            button.calculator__operator(type='button' data-operator='x') &times;
+                            button.calculator__button(type='button' data-number='4') 4
+                            button.calculator__button(type='button' data-number='5') 5
+                            button.calculator__button(type='button' data-number='6') 6
+                            button.calculator__operator(type='button' data-operator='-') &minus;
+                            button.calculator__button(type='button' data-number='1') 1
+                            button.calculator__button(type='button' data-number='2') 2
+                            button.calculator__button(type='button' data-number='3') 3
+                            button.calculator__operator(type='button' data-operator='+') &plus;
+                            button.calculator__button(type='button' data-negation='') &plusmn;
+                            button.calculator__button(type='button' data-number='0') 0
+                            button.calculator__button(type='button' data-decimal='.') &sdot;
+                            button.calculator__operator(type='button' data-equals='=') &equals;
         +frameSlide 
             +frameContent 
                 h2 Coming soon...
