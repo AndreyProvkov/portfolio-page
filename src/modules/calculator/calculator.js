@@ -94,11 +94,7 @@ export default class Calculator {
                     let rightOperandIdx = operatorIdx + 1;
                     
                     let partialSolution = self.performOperation(...currentExpression.slice(leftOperandIdx, rightOperandIdx + 1));
-                    console.log(partialSolution);
-                    console.log('sss')
-                    console.log(currentExpression);
                     currentExpression.splice(leftOperandIdx, 3, partialSolution.toString());
-                    console.log(currentExpression)
                     return simplifyExpression(currentExpression, operator);
                 }
             }
