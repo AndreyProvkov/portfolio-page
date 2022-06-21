@@ -1,0 +1,501 @@
+/*!*****************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/slider_3d/slider_3d.scss ***!
+  \*****************************************************************************************************************************/
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: calc((1vh + 1vw) * 1.4);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.frames {
+  height: 100vh;
+  width: 100%;
+  perspective: 999px;
+  transform-style: preserve-3d;
+}
+
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 3%;
+  box-sizing: border-box;
+  transition: 1s all, 0.7s opacity;
+  opacity: 1;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: 47% 47%;
+  column-gap: 6%;
+}
+.frame__content {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.frame_bg {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+/*!***************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/scroll_bar_top/scroll_bar_top.scss ***!
+  \***************************************************************************************************************************************/
+.scrollBarTop-progress {
+  width: 100%;
+  height: 3px;
+  display: block;
+  position: fixed;
+  z-index: 199;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgb(83, 32, 97);
+  background: linear-gradient(90deg, rgb(83, 32, 97) 0%, rgb(205, 32, 87) 100%);
+}
+
+.scrollBarTop-unprogress {
+  width: 100%;
+  height: 3px;
+  display: block;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 1s all;
+  background: rgb(48, 21, 56);
+  background: linear-gradient(90deg, rgb(48, 21, 56) 0%, rgb(56, 7, 22) 100%);
+}
+/*!*******************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/background_music/background_music.scss ***!
+  \*******************************************************************************************************************************************/
+.background-music {
+  background-color: black;
+  border: 1px solid #d1f7ff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  z-index: 500;
+  top: 3%;
+  right: 1%;
+  box-shadow: 0rem 0rem 1rem 0.1rem rgba(5, 217, 232, 0.3960784314);
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.background-music__item {
+  background-color: rgba(114, 214, 221, 0.768627451);
+  width: 3%;
+  height: 60%;
+  margin: 5%;
+}
+.background-music__item:nth-child(odd) {
+  animation: audio-1 2s infinite;
+}
+.background-music__item:nth-child(even) {
+  animation: audio-2 2s infinite;
+}
+
+@keyframes audio-1 {
+  50% {
+    height: 30%;
+  }
+}
+@keyframes audio-2 {
+  0% {
+    height: 30%;
+  }
+  50% {
+    height: 60%;
+  }
+  100% {
+    height: 30%;
+  }
+}
+/*!***************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/welcome_screen/welcome_screen.scss ***!
+  \***************************************************************************************************************************************/
+@font-face {
+  font-family: "Blade Runner";
+  src: url(../assets/0c7e2ce28555cce80449.ttf) format("truetype");
+}
+.welcome-screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 600;
+  background-color: rgba(35, 35, 35, 0.97);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  opacity: 1;
+}
+.welcome-screen__title {
+  margin: 0;
+  padding: 0;
+  margin-top: auto;
+  margin-bottom: 5%;
+  font-family: "Blade Runner", "Segoe UI", Tahoma, Verdana, sans-serif;
+  background: linear-gradient(45deg, rgb(135, 44, 160) 30%, rgb(165, 25, 69) 70%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgb(163, 45, 128);
+  text-shadow: none;
+}
+.welcome-screen__description {
+  margin: 0 5%;
+}
+.welcome-screen__continue {
+  margin-top: auto;
+  margin-bottom: 3%;
+  opacity: 0.6;
+  color: rgb(172, 172, 172);
+  text-shadow: none;
+}
+/*!*****************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/accordion/accordion.scss ***!
+  \*****************************************************************************************************************************/
+.accordion {
+  overflow-y: auto;
+  max-height: 25rem;
+  outline: none;
+}
+.accordion::-webkit-scrollbar {
+  width: 0;
+}
+.accordion__title {
+  background: linear-gradient(90deg, rgb(83, 32, 97) 0%, rgb(205, 32, 87) 100%);
+  width: 100%;
+  border-radius: 0.3rem;
+  margin-top: 4%;
+  padding: 2% 0;
+  box-shadow: 0 0 1rem 0.4rem rgb(41, 19, 48);
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.5s all;
+}
+.accordion__title.active {
+  border-radius: 0;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  opacity: 0.8;
+}
+.accordion__description {
+  max-height: 0;
+  transition: all 1s;
+  overflow: hidden;
+}
+/*!*******************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/tabs/tabs.scss ***!
+  \*******************************************************************************************************************/
+.tabs {
+  width: 100%;
+  box-shadow: 0 0 1rem 0.3rem rgb(48, 21, 56);
+  border-radius: 0.4rem;
+}
+.tabs__items {
+  display: flex;
+}
+.tabs__item {
+  border: 1px solid rgba(83, 32, 97, 0.5);
+  flex: 1 1 auto;
+  cursor: pointer;
+  background-color: black;
+}
+.tabs__contents {
+  padding: 5%;
+  border: 1px solid rgb(83, 32, 97);
+  border-top: none;
+}
+.tabs__content {
+  display: none;
+}
+/*!*****************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/stopwatch/stopwatch.scss ***!
+  \*****************************************************************************************************************************/
+.stopwatch {
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  max-width: 20rem;
+  margin: auto;
+}
+.stopwatch__times {
+  margin-bottom: 5%;
+}
+.stopwatch__milliseconds {
+  font-size: calc((1vh + 1vw) * 0.8);
+}
+.stopwatch__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.stopwatch__button {
+  font-size: calc((1vh + 1vw) * 0.8);
+  width: 60%;
+  padding: 0.2rem;
+  margin-bottom: 4%;
+  outline: none;
+  border: none;
+  color: #d1f7ff;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgb(83, 32, 97) 0%, rgb(205, 32, 87) 100%);
+  font-family: "Blender", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-weight: lighter;
+  text-shadow: 0px 0px 3px #05d9e8, 2px 2px 2px #005678;
+  border-radius: 0.2rem;
+}
+.stopwatch__button:last-child {
+  margin-bottom: 0;
+}
+.stopwatch__button[disabled] {
+  background: linear-gradient(90deg, rgb(48, 21, 56) 0%, rgb(56, 7, 22) 100%);
+}
+/*!*********************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/timer/timer.scss ***!
+  \*********************************************************************************************************************/
+.timer {
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  max-width: 20rem;
+  margin: auto;
+}
+.timer__times {
+  margin: auto;
+  margin-bottom: 5%;
+}
+.timer__input {
+  outline: none;
+  border: none;
+  font-family: "Blender", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: calc((1vh + 1vw) * 1.4);
+  font-weight: lighter;
+  text-shadow: 0px 0px 3px #05d9e8, 2px 2px 2px #005678;
+  color: #d1f7ff;
+  cursor: pointer;
+  background: black;
+}
+.timer__milliseconds {
+  font-size: calc((1vh + 1vw) * 0.8);
+}
+.timer__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.timer__button {
+  font-size: calc((1vh + 1vw) * 0.8);
+  width: 60%;
+  padding: 0.2rem;
+  margin-bottom: 4%;
+  outline: none;
+  border: none;
+  color: #d1f7ff;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgb(83, 32, 97) 0%, rgb(205, 32, 87) 100%);
+  font-family: "Blender", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-weight: lighter;
+  text-shadow: 0px 0px 3px #05d9e8, 2px 2px 2px #005678;
+  border-radius: 0.2rem;
+}
+.timer__button:last-child {
+  margin-bottom: 0;
+}
+.timer__button[disabled] {
+  background: linear-gradient(90deg, rgb(48, 21, 56) 0%, rgb(56, 7, 22) 100%);
+}
+/*!*******************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/contact_me/contact_me.scss ***!
+  \*******************************************************************************************************************************/
+.contact-me {
+  width: 100vw;
+  position: fixed;
+  bottom: -4rem;
+  font-size: calc((1vh + 1vw) * 1);
+  text-transform: uppercase;
+  z-index: 500;
+  transition: opacity 0.6s, bottom 0.6s;
+  transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.1rem;
+  will-change: opacity;
+  max-height: 200px;
+}
+.contact-me::after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: var(--width, 12%);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-right: 6rem solid transparent;
+  border-left: 6rem solid transparent;
+  border-bottom: var(--heightBorder, 4rem) solid rgb(54, 54, 54);
+  cursor: pointer;
+  text-align: center;
+}
+.contact-me:hover {
+  opacity: 1;
+}
+.contact-me__text, .contact-me__links, .contact-me__author {
+  z-index: 600;
+}
+.contact-me__text {
+  cursor: pointer;
+  padding-top: 0.1rem;
+}
+.contact-me__links, .contact-me__text {
+  margin-bottom: 0.5rem;
+}
+.contact-me.active {
+  bottom: 0;
+  opacity: 1;
+}
+.contact-me__links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-me__tg, .contact-me__mail, .contact-me__github {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 1%;
+  width: 2rem;
+  height: 2rem;
+}
+.contact-me__author {
+  text-shadow: none;
+  color: rgb(131, 131, 131);
+}
+
+.mail,
+.github,
+.telegram {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  transition: all 0.5s;
+  fill: rgb(22, 22, 22);
+}
+.mail:hover,
+.github:hover,
+.telegram:hover {
+  fill: #86e7ee;
+}
+/*!*******************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./modules/calculator/calculator.scss ***!
+  \*******************************************************************************************************************************/
+.calculator {
+  font-family: "Blender", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: calc((1vh + 1vw) * 1.6);
+  font-weight: lighter;
+  color: #d1f7ff;
+  text-shadow: 0px 0px 3px #05d9e8, 2px 2px 2px #005678;
+  box-shadow: 0 0 1rem 0.3rem rgb(48, 21, 56);
+  transition: all 0.3s;
+}
+.calculator:hover {
+  box-shadow: 0 0 1rem 0.3rem rgb(66, 29, 77);
+}
+.calculator__display {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(58, 58, 58, 0.705);
+  padding: 0 2%;
+}
+.calculator__history, .calculator__result {
+  text-align: right;
+  width: 100%;
+}
+.calculator__history[disabled] {
+  font-family: "Blender", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: calc((1vh + 1vw) * 1.2);
+  font-weight: lighter;
+  color: #9ebabe;
+  text-shadow: 0px 0px 3px #0897a1, 2px 2px 2px #003d55;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.calculator__keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(1rem, 1fr));
+  grid-template-rows: repeat(5, minmax(1rem, 1fr));
+  justify-content: center;
+  align-content: center;
+}
+.calculator__button, .calculator__operator {
+  font-family: "Blender", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: calc((1vh + 1vw) * 1.4);
+  font-weight: lighter;
+  color: #d1f7ff;
+  text-shadow: 0px 0px 3px #05d9e8, 2px 2px 2px #005678;
+  background-color: rgba(49, 49, 49, 0.705);
+  padding: 6% 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+.calculator__button:hover, .calculator__operator:hover {
+  background-color: rgb(74, 55, 77);
+}
+.calculator__button[data-equals="="]:hover, .calculator__operator[data-equals="="]:hover {
+  background-color: rgb(182, 65, 102);
+}
+/*!**************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./styles/style.scss ***!
+  \**************************************************************************************************************/
+@font-face {
+  font-family: "Blender";
+  src: url(../assets/c7ed607181ba7bfeb70d.ttf) format("truetype");
+  font-weight: lighter;
+}
+body {
+  font-family: "Blender", "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: calc((1vh + 1vw) * 1.4);
+  font-weight: lighter;
+  color: #d1f7ff;
+  text-shadow: 0px 0px 3px #05d9e8, 2px 2px 2px #005678;
+  background-color: #000;
+}
+
+.frame_bg {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.skills {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align-last: left;
+}
+.skills__item {
+  margin-left: 10%;
+}
+.skills__item:first-child {
+  margin-top: 3%;
+}
