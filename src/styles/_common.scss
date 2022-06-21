@@ -17,3 +17,16 @@ body {
         background-color: vars.$frame_bg_dark;
     }
 }
+
+.skills {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align-last: left;
+    &__item {
+        margin-left: 10%;
+        &:first-child {
+            margin-top: 3%;
+        }
+    }
+}
