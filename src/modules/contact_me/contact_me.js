@@ -4,15 +4,16 @@ export default class ContactMe {
     contactMeLinks = document.querySelector('.contact-me__links');
 
     calculateWidthPseudoElement() {
-        return String(getComputedStyle(this.contactMeText).width);
+        return `${this.contactMeText.offsetWidth}px`;
+
     }
 
     calculateHeightPseudoElement() {
-        return `${parseInt(getComputedStyle(this.contactMe).height) + parseInt(getComputedStyle(this.contactMe).padding)}px`;
+        return `${this.contactMe.offsetHeight}px`;
     }
 
     calculateBottomPosition() {
-        return `-${parseInt(getComputedStyle(this.contactMe).height) - parseInt(getComputedStyle(this.contactMeText).height) - 3}px`;
+        return `-${this.contactMe.offsetHeight - this.contactMeText.offsetHeight}px`;
     }
 
     setStartSizesContactBlock() {
@@ -37,8 +38,8 @@ export default class ContactMe {
     }
 
     init() {
-        this.setStartSizesContactBlock();
-
+        window.onload = () => this.setStartSizesContactBlock();
+        
         this.contactMeLinks.addEventListener('click', e => {
             e.stopPropagation();
         });

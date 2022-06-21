@@ -1,5 +1,5 @@
 .contact-me {
-    width: 100%;
+    width: 100vw;
     position: fixed;
     bottom: -4rem;
     font-size: calc((1vh + 1vw) * 1);
@@ -14,11 +14,12 @@
     justify-content: space-between;
     padding-top: 0.1rem;
     will-change: opacity;
+    max-height: 200px;
     &::after {
         content: '';
         position: absolute;
         height: 0;
-        width: var(--width, 16%);
+        width: var(--width, 12%);
         top: 0;
         left: 50%;
         transform: translate(-50%, 0%);
@@ -76,6 +77,7 @@
     height: 2rem;
     display: inline-block;
     transition: all 0.5s;
+    fill:rgb(22, 22, 22);
     &:hover {
         fill: #86e7ee;
     }
