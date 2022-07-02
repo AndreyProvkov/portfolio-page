@@ -2,11 +2,11 @@
 
 ## Using technology
 
-- JavaScript
+- JavaScript,
+- Webpack,
 - PUG,
 - SCSS (SASS),
-- BEM,
-- Webpack.
+- BEM.
 
 ## Installation
 
