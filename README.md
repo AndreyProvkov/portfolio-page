@@ -3,6 +3,7 @@
 ## Using technology
 
 - JavaScript,
+- React,
 - Webpack,
 - PUG,
 - SCSS (SASS),
