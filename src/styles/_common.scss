@@ -30,3 +30,61 @@ body {
         }
     }
 }
+.layout {
+    width: 100%;
+    position: relative;
+    &__image {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: .4rem;
+        transition: .5s all;
+        &:hover {
+            transform: scale(1.05);
+            &::after {
+                background-color: rgba(19, 19, 19, .6);
+            }
+        }
+        &::after {
+            transition: .5s all;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(19, 19, 19, .8);
+        }
+        &-item {
+            object-fit: contain;
+            width: 100%;
+            transition: .5s all;
+        }
+    }
+    &__link {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: lighter;
+        color: vars.$lightcyan;
+        text-shadow: 0px 0px 3px vars.$cyan,
+            2px 2px 2px vars.$cadetblue;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid vars.$lightcyan;
+        transition: .5s all;
+        will-change: all;
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+            background-color: rgba(0, 183, 255, 0.08);
+            -webkit-box-shadow: 0px 0px 2rem 0 vars.$cadetblue;
+            -moz-box-shadow: 0px 0px 2rem 0 vars.$cadetblue;
+            box-shadow: 0px 0px 2rem 0 vars.$cadetblue;
+        }
+    }
+}
