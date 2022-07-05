@@ -12,9 +12,16 @@ export default class Slider3D {
         });
     }
 
+    setZIndex() {
+        this.frames.forEach((item, i, arr) => {
+            item.style.zIndex = arr.length - i;
+        });
+    }
+
     setOpacitySlides(item, index) {
         if (this.zValues[index] > 0) {
             item.style.opacity = '0';
+            
         } else {
             item.style.opacity = '1';
         }
@@ -74,7 +81,9 @@ export default class Slider3D {
 
     init() {
         this.setBeginZValues();
+        this.setZIndex();
 
+        document.addEventListener('scroll', () => console.log('ccc'))
         document.addEventListener('wheel', this.scroll.bind(this));
         document.addEventListener('keydown', this.scroll.bind(this));
     }
