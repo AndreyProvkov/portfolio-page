@@ -126,7 +126,11 @@ block content
                             button.calculator__operator(type='button' data-equals='=') &equals;
         +frameSlide 
             +frameContent 
-                h2 Coming soon...
+                .layout
+                    .layout__image
+                        img(src=require('../assets/img/store-react.png')).layout__image-item
+                    a(href='https://andreyprovkov.github.io/react-store-to-view/',
+                      target='_blank').layout__link View (Store React)
             +frameContent
     .contact-me
         .contact-me__text Contact me
