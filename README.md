@@ -9,6 +9,12 @@
 - SCSS (SASS),
 - BEM.
 
+## Source
+
+[There](https://github.com/AndreyProvkov/portfolio-page-to-view) you can see project files to view.
+
+[Click to view demo](https://andreyprovkov.github.io/portfolio-page-to-view/).
+
 ## Installation
 
 To continue make sure you have [Node.js](https://nodejs.org/en/) installed.
@@ -45,9 +51,3 @@ Run command for production release:
 ```bash
 npm run build
 ```
-
-***
-
-[There](https://github.com/AndreyProvkov/portfolio-page-to-view) you can see project files to view.
-
-[Click to view demo](https://andreyprovkov.github.io/portfolio-page-to-view/).
