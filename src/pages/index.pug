@@ -23,22 +23,32 @@ block content
         .background-music__item 
     .frames
         +frameSlide
-                +frameContent
-                    p.description.
-                        Hello, glad to see you on my page. My name is Andrey and my goal is to become a front-end developer. Here you can see my some projects.
-                +frameContent 
-                    ul.skills At the moment I have the following skills:
-                        li.skills__item - JavaScript
-                        li.skills__item - React
-                        li.skills__item - Webpack
-                        li.skills__item - PUG/SCSS(SASS)
-                        li.skills__item - HTML/CSS
-                        li.skills__item - BEM
-                        li.skills__item - Figma
-                        li.skills__item - Git
+            +frameContent
+                p.description
+                .
+                    Hello, glad to see you on my page. My name is Andrey and my goal is to become a front-end developer. Here you can see my some projects.
+            +frameContent 
+                ul.skills At the moment I have the following skills:
+                    li.skills__item - JavaScript
+                    li.skills__item - React
+                    li.skills__item - Webpack
+                    li.skills__item - PUG/SCSS(SASS)
+                    li.skills__item - HTML/CSS
+                    li.skills__item - BEM
+                    li.skills__item - Figma
+                    li.skills__item - Git
         +frameSlide 
             +frameContent 
             +frameContent
+                +addBtnInfo('right')
+                .description
+                    a(href='#').description__btn-close &times;
+                    .description__text
+                        .
+                            The main problem was the correct display of the banner and menu on different screens; connecting plugins and displaying animation correctly.
+                        br
+                        .
+                            Technologies used: pug / scss / webpack / js / js plugins. 
                 .layout
                     .layout__image
                         img(src=require('../assets/img/layout-demo.png')).layout__image-item
@@ -46,7 +56,28 @@ block content
                       target='_blank').layout__link View (layout)
         +frameSlide
             +frameContent
-                .tabs 
+                +addBtnInfo('left')
+                .description
+                    a(href='#').description__btn-close &times;
+                    .description__text
+                        .
+                            Main problems and tasks:
+                        br
+                        .
+                            Tabs: it was necessary to make even borders of headings when switching tabs.
+                        br
+                        .
+                            Stopwatch and timer: it was necessary to make the correct calculation of time when reaching the boundary values. Also the correct pause and continue.
+                        br
+                        .
+                            Timer: process input. If the entered value is greater or less than the possible time, then make it the maximum or minimum possible for the desired time.
+                        br
+                        .
+                            Since the code was divided into small functions, it became possible to use part of the functions from the stopwatch for the timer.
+                        br
+                        .
+                            Technologies used: pug / scss / webpack / js.
+                .tabs
                     .tabs__items
                         .tabs__item Accordion
                         .tabs__item Stopwatch
@@ -99,33 +130,51 @@ block content
         +frameSlide 
             +frameContent 
             +frameContent
+                +addBtnInfo('right')
+                .description
+                    a(href='#').description__btn-close &times;
+                    .description__text
+                        .
+                            The main task was to support operator priorities without the use of eval(). It was necessary to find and calculate the value of the two operands with the highest operator precedence in the correct order, then calculate this value with the operator of lower priority.
+                        br
+                        .
+                            Technologies used: pug / scss / webpack / js.
                 .calculator
-                        .calculator__display
-                            input.calculator__history(type='text' value='' disabled='')
-                            output.calculator__result(name='result') 0
-                        .calculator__keypad
-                            button.calculator__button(type='button' data-all-clear) C
-                            button.calculator__button(type='button' data-backspace) &larrb;
-                            button.calculator__button(type='button' data-percent) %
-                            button.calculator__operator(type='button' data-operator='/') &div;
-                            button.calculator__button(type='button' data-number='7') 7
-                            button.calculator__button(type='button' data-number='8') 8
-                            button.calculator__button(type='button' data-number='9') 9
-                            button.calculator__operator(type='button' data-operator='x') &times;
-                            button.calculator__button(type='button' data-number='4') 4
-                            button.calculator__button(type='button' data-number='5') 5
-                            button.calculator__button(type='button' data-number='6') 6
-                            button.calculator__operator(type='button' data-operator='-') &minus;
-                            button.calculator__button(type='button' data-number='1') 1
-                            button.calculator__button(type='button' data-number='2') 2
-                            button.calculator__button(type='button' data-number='3') 3
-                            button.calculator__operator(type='button' data-operator='+') &plus;
-                            button.calculator__button(type='button' data-negation='') &plusmn;
-                            button.calculator__button(type='button' data-number='0') 0
-                            button.calculator__button(type='button' data-decimal='.') &sdot;
-                            button.calculator__operator(type='button' data-equals='=') &equals;
+                    .calculator__display
+                        input.calculator__history(type='text' value='' disabled='')
+                        output.calculator__result(name='result') 0
+                    .calculator__keypad
+                        button.calculator__button(type='button' data-all-clear) C
+                        button.calculator__button(type='button' data-backspace) &larrb;
+                        button.calculator__button(type='button' data-percent) %
+                        button.calculator__operator(type='button' data-operator='/') &div;
+                        button.calculator__button(type='button' data-number='7') 7
+                        button.calculator__button(type='button' data-number='8') 8
+                        button.calculator__button(type='button' data-number='9') 9
+                        button.calculator__operator(type='button' data-operator='x') &times;
+                        button.calculator__button(type='button' data-number='4') 4
+                        button.calculator__button(type='button' data-number='5') 5
+                        button.calculator__button(type='button' data-number='6') 6
+                        button.calculator__operator(type='button' data-operator='-') &minus;
+                        button.calculator__button(type='button' data-number='1') 1
+                        button.calculator__button(type='button' data-number='2') 2
+                        button.calculator__button(type='button' data-number='3') 3
+                        button.calculator__operator(type='button' data-operator='+') &plus;
+                        button.calculator__button(type='button' data-negation='') &plusmn;
+                        button.calculator__button(type='button' data-number='0') 0
+                        button.calculator__button(type='button' data-decimal='.') &sdot;
+                        button.calculator__operator(type='button' data-equals='=') &equals;
         +frameSlide 
-            +frameContent 
+            +frameContent
+                +addBtnInfo('left')
+                .description
+                    a(href='#').description__btn-close &times;
+                    .description__text
+                        .
+                            In this project, the tasks were to display products on the main screen, add them to the cart. After opening the basket, it was necessary to display the items and their amount, or to show that the basket is empty. Also implement categorical sorting using states.
+                        br
+                        .
+                            Technologies used: create-react-app / react.
                 .layout
                     .layout__image
                         img(src=require('../assets/img/store-react.png')).layout__image-item

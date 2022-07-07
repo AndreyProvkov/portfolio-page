@@ -38,6 +38,10 @@ import ContactMe from '../modules/contact_me/contact_me';
 import '../modules/calculator/calculator.scss';
 import Calculator from '../modules/calculator/calculator';
 
+// import btn-info
+import '../modules/description/description.scss';
+import Description from '../modules/description/description';
+
 // import Common
 import { pauseDecorator } from './common';
 import '../styles/style.scss';
@@ -75,3 +79,6 @@ contactMe.init();
 
 const calculator = new Calculator();
 calculator.init();
+
+const description = new Description();
+description.init();
