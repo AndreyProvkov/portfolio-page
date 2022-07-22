@@ -1,6 +1,8 @@
+@use './../../styles/config' as *;
+
 .background-music {
-    background-color: black;
-    border: 1px solid #d1f7ff;
+    background-color: $color-black;
+    border: 1px solid $color-lightcyan;
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
@@ -12,17 +14,20 @@
     z-index: 500;
     top: 3%;
     right: 1%;
-    box-shadow: 0rem 0rem 1rem 0.1rem #05d9e865;
+    box-shadow: 0rem 0rem 1rem 0.1rem $color-teal;
     cursor: pointer;
     transition: opacity 0.3s;
+
     &__item {
-        background-color: #72d6ddc4;
+        background-color: $color-light_teal;
         width: 3%;
         height: 60%;
         margin: 5%;
+
         &:nth-child(odd) {
             animation: audio-1 2s infinite;
         }
+
         &:nth-child(even) {
             animation: audio-2 2s infinite;
         }

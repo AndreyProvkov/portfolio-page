@@ -1,3 +1,5 @@
+@use './../../styles/config' as *;
+
 .contact-me {
     width: 100vw;
     position: fixed;
@@ -15,6 +17,7 @@
     padding-top: 0.1rem;
     will-change: opacity;
     max-height: 200px;
+
     &::after {
         content: '';
         position: absolute;
@@ -25,36 +28,43 @@
         transform: translate(-50%, 0%);
         border-right: 6rem solid transparent;
         border-left: 6rem solid transparent;
-        border-bottom: var(--heightBorder, 4rem) solid rgb(54, 54, 54);
+        border-bottom: var(--heightBorder, 4rem) solid $color-pebble;
         cursor: pointer;
         text-align: center;
     }
+
     &:hover {
         opacity: 1;
     }
+
     &__text,
     &__links,
     &__author {
         z-index: 600;
     }
+
     &__text {
         cursor: pointer;
         padding-top: 0.1rem;
     }
+
     &__links,
     &__text {
         margin-bottom: 0.5rem;
     }
+
     &.active {
         bottom: 0;
         opacity: 1;
     }
+
     &__links {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
+
     &__tg,
     &__mail,
     &__github {
@@ -64,9 +74,10 @@
         width: 2rem;
         height: 2rem;
     }
+
     &__author {
         text-shadow: none;
-        color:rgb(131, 131, 131);
+        color: $color-fossil;
     }
 }
 
@@ -77,8 +88,9 @@
     height: 2rem;
     display: inline-block;
     transition: all 0.5s;
-    fill:rgb(22, 22, 22);
+    fill: $color-ink;
+
     &:hover {
-        fill: #86e7ee;
+        fill: $color-arctic;
     }
 }

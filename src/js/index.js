@@ -1,46 +1,14 @@
-// import Slider_3D
-import '../modules/slider_3d/slider_3d.scss';
-import Slider3D from '../modules/slider_3d/slider_3d.js';
-
-// import Scroll_Bar_Top
-import '../modules/scroll_bar_top/scroll_bar_top.scss';
-import ScrollBarTop from '../modules/scroll_bar_top/scroll_bar_top.js';
-
-// import Bacgkround_Music
-import '../modules/background_music/background_music.scss';
-import BackgroundMusic from '../modules/background_music/background_music';
-
-// import Welcome Screen
-import '../modules/welcome_screen/welcome_screen.scss';
-import WelcomeScreen from '../modules/welcome_screen/welcome_screen';
-
-// import Accordion
-import '../modules/accordion/accordion.scss';
-import Accordion from '../modules/accordion/accordion.js';
-
-// import Tabs
-import '../modules/tabs/tabs.scss';
-import Tabs from '../modules/tabs/tabs.js';
-
-// import Stopwatch
-import '../modules/stopwatch/stopwatch.scss';
-import Stopwatch from '../modules/stopwatch/stopwatch';
-
-// import Timer
-import Timer from '../modules/timer/timer';
-import '../modules/timer/timer.scss';
-
-// import Contact Me
-import '../modules/contact_me/contact_me.scss';
-import ContactMe from '../modules/contact_me/contact_me';
-
-// import Calculator
-import '../modules/calculator/calculator.scss';
-import Calculator from '../modules/calculator/calculator';
-
-// import btn-info
-import '../modules/description/description.scss';
-import Description from '../modules/description/description';
+import Slider3D from '../modules/slider_3d/slider_3d'
+import ScrollBarTop from '../modules/scroll_bar_top/scroll_bar_top'
+import BackgroundMusic from '../modules/background_music/background_music'
+import WelcomeScreen from '../modules/welcome_screen/welcome_screen'
+import Accordion from '../modules/accordion/accordion'
+import Tabs from '../modules/tabs/tabs'
+import Stopwatch from '../modules/stopwatch/stopwatch'
+import Timer from '../modules/timer/timer'
+import ContactMe from '../modules/contact_me/contact_me'
+import Calculator from '../modules/calculator/calculator'
+import Description from '../modules/description/description'
 
 // import Common
 import { pauseDecorator } from './common';

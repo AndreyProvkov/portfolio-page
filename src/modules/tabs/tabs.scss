@@ -1,21 +1,27 @@
+@use './../../styles/config' as *;
+
 .tabs {
     width: 100%;
-    box-shadow: 0 0 1rem .3rem rgba(48, 21, 56, 1);
+    box-shadow: 0 0 1rem .3rem $color-dark_violet;
     border-radius: 0.4rem;
+
     &__items {
         display: flex;
     }
+
     &__item {
-        border: 1px solid rgba(83, 32, 97, 0.5);
+        border: 1px solid $color-violet_opacity_05;
         flex: 1 1 auto;
         cursor: pointer;
-        background-color: black;
+        background-color: $color-black;
     }
+
     &__contents {
         padding: 5%;
-        border: 1px solid rgb(83, 32, 97);
+        border: 1px solid $color-violet;
         border-top: none;
     }
+
     &__content {
         display: none;
     }
