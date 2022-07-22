@@ -1,21 +1,15 @@
-@use './vars' as vars;
-@use './fonts';
+@use './config' as *;
 
-@include fonts.blender;
+@include font-blender;
 
 body {
     font-family: 'Blender', 'Segoe UI', Tahoma, Verdana, sans-serif;
     font-size: calc((1vh + 1vw) * 1.4);
     font-weight: lighter;
-    color: vars.$lightcyan;
-    text-shadow: 0px 0px 3px vars.$cyan,
-        2px 2px 2px vars.$cadetblue;
-    background-color: vars.$black;
-}
-.frame {
-    &_bg {
-        background-color: vars.$frame_bg_dark;
-    }
+    color: $color-lightcyan;
+    text-shadow: 0px 0px 3px $color-cyan,
+        2px 2px 2px $color-cadetblue;
+    background-color: $color-black;
 }
 
 .skills {
@@ -23,16 +17,20 @@ body {
     padding: 0;
     list-style: none;
     text-align-last: left;
+
     &__item {
         margin-left: 10%;
+
         &:first-child {
             margin-top: 3%;
         }
     }
 }
+
 .layout {
     width: 100%;
     position: relative;
+
     &__image {
         position: relative;
         width: 80%;
@@ -40,12 +38,15 @@ body {
         overflow: hidden;
         border-radius: .4rem;
         transition: .5s all;
+
         &:hover {
             transform: scale(1.05);
+
             &::after {
-                background-color: rgba(19, 19, 19, .6);
+                background-color: $color-crow_light;
             }
         }
+
         &::after {
             transition: .5s all;
             content: '';
@@ -54,14 +55,16 @@ body {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(19, 19, 19, .8);
+            background-color: $color-crow;
         }
+
         &-item {
             object-fit: contain;
             width: 100%;
             transition: .5s all;
         }
     }
+
     &__link {
         position: absolute;
         bottom: 2rem;
@@ -70,21 +73,22 @@ body {
         text-transform: uppercase;
         text-decoration: none;
         font-weight: lighter;
-        color: vars.$lightcyan;
-        text-shadow: 0px 0px 3px vars.$cyan,
-            2px 2px 2px vars.$cadetblue;
+        color: $color-lightcyan;
+        text-shadow: 0px 0px 3px $color-cyan,
+            2px 2px 2px $color-cadetblue;
         padding: 2%;
         border-radius: 0.5rem;
-        border: 1px solid vars.$lightcyan;
+        border: 1px solid $color-lightcyan;
         transition: .5s all;
         will-change: all;
         opacity: 0.7;
+
         &:hover {
             opacity: 1;
-            background-color: rgba(0, 183, 255, 0.08);
-            -webkit-box-shadow: 0px 0px 2rem 0 vars.$cadetblue;
-            -moz-box-shadow: 0px 0px 2rem 0 vars.$cadetblue;
-            box-shadow: 0px 0px 2rem 0 vars.$cadetblue;
+            background-color: $color-cerulean_transition;
+            -webkit-box-shadow: 0px 0px 2rem 0 $color-cadetblue;
+            -moz-box-shadow: 0px 0px 2rem 0 $color-cadetblue;
+            box-shadow: 0px 0px 2rem 0 $color-cadetblue;
         }
     }
 }

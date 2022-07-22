@@ -1,3 +1,5 @@
+@use './../../styles/config' as *;
+
 .description {
   position: absolute;
   z-index: 2;
@@ -5,56 +7,64 @@
   transform: translateY(-50%);
   left: 0;
   max-height: 50rem;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: $color-black_opacity095;
   display: flex;
   align-items: center;
   padding: 4%;
-  border: 1px solid #d1f7ff31;
+  border: 1px solid $color-pebble;
   border-radius: .5rem;
   transition: .5s all;
   visibility: hidden;
   opacity: 0;
   min-height: -webkit-fill-available;
+
   &__text {
 
     height: 100%;
   }
+
   &_active {
     visibility: visible;
     opacity: 1;
   }
+
   &__btn-close {
     text-decoration: none;
     position: absolute;
     padding: 0 .5rem;
     right: 0;
     top: 0;
-    color: #d1f7ff71;
+    color: $color-pebble;
     text-shadow: none;
     transition: .5s all;
     z-index: 1;
+    font-size: 3rem;
+
     &:hover {
-      color: #d1f7ff;
+      color: $color-lightcyan;
     }
   }
 }
 
 .btn-info {
-    position: absolute;
-    top: -17%;
-    text-decoration: none;
-    color: #3a3a3a;
-    text-shadow: none;
-    padding: .5rem;
-    z-index: 1;
-    transition: .5s all;
-    &_right {
-      right: -3%;  
-    }
-    &_left {
-      left: -3%;
-    }
-    &:hover {
-        color: #d1f7ff;
-    }
+  position: absolute;
+  top: -17%;
+  text-decoration: none;
+  color: $color-pebble;
+  text-shadow: none;
+  padding: .5rem;
+  z-index: 1;
+  transition: .5s all;
+
+  &_right {
+    right: -3%;
+  }
+
+  &_left {
+    left: -3%;
+  }
+
+  &:hover {
+    color: $color-lightcyan;
+  }
 }
