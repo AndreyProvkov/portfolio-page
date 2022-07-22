@@ -8,7 +8,19 @@ block variables
 block content
     .welcome-screen
         h1.welcome-screen__title welcome
-        .welcome-screen__description To move through the slides scroll the mouse wheel or press the arrow up or arrow down key
+        .welcome-screen__description
+            .
+                To move through the slides scroll the mouse wheel 
+            span.icon.icon-mouse
+                include ../layout/includes/svg-icon/mouse.pug
+            .
+                or press the arrow up
+            span.icon.icon-arrow-up
+                include ../layout/includes/svg-icon/arrow_up.pug
+            .
+                or arrow down key
+            span.icon.icon-arrow-down
+                include ../layout/includes/svg-icon/arrow_down.pug
         .welcome-screen__continue CLICK TO CONTINUE
     .scrollBarTop-progress
     .scrollBarTop-unprogress
