@@ -35,8 +35,7 @@
 
     &__keypad {
         display: grid;
-        grid-template-columns: repeat(4, minmax(1rem, 1fr));
-        grid-template-rows: repeat(5, minmax(1rem, 1fr));
+        grid-template-columns: repeat(4, minmax(3.5rem, 1fr));
         justify-content: center;
         align-content: center;
     }

@@ -32,7 +32,7 @@ p {
     align-content: center;
     justify-content: center;
     text-align: center;
-    grid-template-columns: 47% 47%;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     column-gap: 6%;
 
     &__content {
