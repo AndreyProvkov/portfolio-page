@@ -5,6 +5,10 @@
     box-shadow: 0 0 1rem .3rem $color-dark_violet;
     border-radius: 0.4rem;
 
+    @media screen and (max-width: 651px) {
+        width: 80%;
+    }
+
     &__items {
         display: flex;
     }

@@ -12,6 +12,7 @@
     }
 
     &__input {
+        margin-right: 1%;
         outline: none;
         border: none;
         font-family: 'Blender', 'Segoe UI', Tahoma, Verdana, sans-serif;
@@ -21,7 +22,7 @@
             2px 2px 2px $color-cadetblue;
         color: $color-lightcyan;
         cursor: pointer;
-        background: $color-black;
+        background: transparent;
     }
 
     &__milliseconds {
