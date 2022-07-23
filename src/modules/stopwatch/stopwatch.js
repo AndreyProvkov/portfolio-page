@@ -220,6 +220,9 @@ export default class Stopwatch {
 
             this.lapsBlock = document.querySelector('.stopwatch__laps');
             this.lapsBlock.insertAdjacentHTML('afterbegin', elem);
+            this.lapsBlock.addEventListener('wheel', e => {
+                e.stopPropagation();
+            });
 
             newLapTimeBlocks = document.querySelector('.new-time').children;
             currentLapTimeBlocks = document.querySelector('.current-time').children;
