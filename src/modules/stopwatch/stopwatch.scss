@@ -45,4 +45,28 @@
             background: linear-gradient(90deg, $color-dark_violet 0%, $color-dark_rouge 100%);
         }
     }
+
+    &__laps {
+        margin-top: 5%;
+        overflow-y: auto;
+        max-height: 9rem;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+
+    &__lap {
+        font-size: calc((1vh + 1vw) * 1.1);
+        display: flex;
+        align-items: baseline;
+        justify-content: space-around;
+        margin-top: 2%;
+    }
+}
+
+.current-time {
+    color: $color-cloud;
+    text-shadow: 0 0 2px $color-fossil,
+        2px 2px 2px $color-pebble;
 }
